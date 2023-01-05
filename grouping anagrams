@@ -1,0 +1,12 @@
+class MyClass:
+    def groupAnagrams(self, strs:List[str]) -> List[List[str]]:
+        anagrams = collections.defaultdict(list) #defaultdict 만들기
+        for word in strs:
+            anagrams[''.join(sorted(word))].append(word) #딕셔너리 형태로 저장
+        return anagrams.values() #불필요한 key는 빼고 value만 리턴
+
+# Create an instance of the class
+obj = MyClass()
+
+# Call the groupAnagrams method on the instance
+obj.groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat'])
